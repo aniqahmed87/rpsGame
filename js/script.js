@@ -15,47 +15,32 @@ function getComputerChoice(){
 }
 
 function playRound(playerSelection, computerSelection){
-    let winner;
+    
     if (playerSelection === computerSelection){
-        winner = 'tie';
+        return 'tie';
     }else if (playerSelection === 'rock'){
         if (computerSelection === 'paper'){
-            winner = 'computer';
+            return 'computer';
         }else if (computerSelection === 'scissors'){
-            winner = 'player';
+            return 'player';
         }
     }else if (playerSelection === 'paper'){
         if (computerSelection === 'rock'){
-            winner = 'player';
+            return 'player';
         }else if (computerSelection === 'scissors'){
-            winner = 'computer';
+            return 'computer';
         }
     }else if (playerSelection === 'scissors'){
         if (computerSelection === 'rock'){
-            winner = 'computer';
+            return 'computer';
         }else if (computerSelection === 'paper'){
-            winner = 'player';
+            return 'player';
         }
-    }
-    
-    switch (winner){
-        case 'computer':
-            return `computer`;
-            break;
-        case 'player':
-            return `player`;
-            break;
-        case 'tie':
-            return `tie`;
-            break;
-        default:
-            return 'invalid';
-            break;
+    }else {
+        return 'invalid';
     }
 
 }
-
-  //console.log(playRound(playerSelection, computerSelection));
 
 function playGame(){
     let playerWinCount = 0;
