@@ -48,7 +48,7 @@ function playGame(){
     
     let winner;
     for(let i=1; i<=5; i++){
-        let playerSelection = prompt('Enter your choice between Rock, Paper or Scissors');
+        let playerSelection = prompt(`Round# ${i} | Enter your choice between Rock, Paper or Scissors`);
         playerSelection = playerSelection.toLowerCase();
         let computerSelection = getComputerChoice();
         winner = playRound(playerSelection,computerSelection);
@@ -70,9 +70,9 @@ function playGame(){
         }
     }
     if (computerWinCount>playerWinCount){
-        return `Computer won. Rounds Won: ${computerWinCount}`
+        return `Computer won. Rounds Won: ${computerWinCount} of 5`;
     }else if (playerWinCount>computerWinCount){
-        return `You won. Rounds Won: ${playerWinCount}`;
+        return `You won. Rounds Won: ${playerWinCount} of 5`;
     }else if (playerWinCount === computerWinCount){
         return 'Its a tie';
     }
